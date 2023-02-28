@@ -1,7 +1,8 @@
 import 'package:favourite_shop/models/product.dart';
+import 'package:flutter/foundation.dart';
 
-class Products{
-  final List<Product> items = [
+class ProductsProvider with ChangeNotifier{
+  final List<Product> _items = [
     Product(
         id: 'p1',
         title: 'Футболка',
@@ -26,8 +27,13 @@ class Products{
         description: 'Классическая верхняя одежда',
         price: 13000,
         imageURL: 'http://best-guide.ru/wp-content/uploads/2013/10/Covert-Coat-Cordings.jpg'),
-
-
   ];
 
+  List<Product> get item => _items;
+
+  Product findById(String id) => _items.firstWhere((product) => product.id == id);
+
+  void addProduct(){
+    notifyListeners();
+  }
 }

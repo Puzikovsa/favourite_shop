@@ -1,3 +1,4 @@
+import 'package:favourite_shop/pages/product_detail_page.dart';
 import 'package:favourite_shop/pages/products_overview_page.dart';
 import 'package:flutter/material.dart';
 
@@ -20,6 +21,10 @@ class MyApp extends StatelessWidget {
         ),
       ),
       home: ProductsOverviewPage(),
+      routes: {
+        ProductDetailPage.rout :
+            (context) => const ProductDetailPage(),
+      },
     );
   }
 }
