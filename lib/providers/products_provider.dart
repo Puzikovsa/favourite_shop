@@ -1,5 +1,6 @@
-import 'package:favourite_shop/models/product.dart';
+import 'package:favourite_shop/providers/product.dart';
 import 'package:flutter/foundation.dart';
+
 
 class ProductsProvider with ChangeNotifier{
   final List<Product> _items = [

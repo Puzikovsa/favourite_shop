@@ -1,6 +1,5 @@
-import 'package:favourite_shop/models/product.dart';
+import 'package:favourite_shop/providers/product.dart';
 import 'package:flutter/material.dart';
-
 import '../pages/product_detail_page.dart';
 
 class ProductItem extends StatelessWidget {
@@ -19,21 +18,21 @@ class ProductItem extends StatelessWidget {
             textAlign: TextAlign.center,
           ),
           leading: IconButton(
-            iconSize: 18,
             onPressed: () {},
-          icon: const Icon(Icons.favorite),
-          color: Theme.of(context).colorScheme.secondary,
+            icon: const Icon(Icons.favorite),
+            iconSize: 18,
+            color: Theme.of(context).colorScheme.secondary,
           ),
           trailing: IconButton(
-            iconSize: 20,
             onPressed: () {},
             icon: const Icon(Icons.shopping_cart),
+            iconSize: 18,
             color: Theme.of(context).colorScheme.secondary,
           ),
         ),
         child: GestureDetector(
           onTap: () {
-            Navigator.of(context).pushNamed(ProductDetailPage.rout);
+            Navigator.of(context).pushNamed(ProductDetailPage.rout, arguments: product.id);
           },
           child: Image.network(
             product.imageURL,
